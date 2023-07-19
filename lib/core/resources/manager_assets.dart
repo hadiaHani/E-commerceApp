@@ -4,7 +4,8 @@ class ManagerAssets {
   static String bagImagesPath = "assets/images/bag";
   static String bannersImagesPath = "assets/images/banners";
   static String categoriesImagesPath = "assets/images/categories";
-
+  static const String productImageUrl =
+      'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png';
 // general images
   static String forgotPassword = "$imagesPath/forgot_password.jpg";
   static String mapRounded = "$imagesPath/rounded_map.png";
