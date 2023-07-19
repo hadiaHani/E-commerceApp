@@ -2,7 +2,7 @@ import 'package:ecommerce_admin_app_firebase/config/constant.dart';
 import 'package:ecommerce_admin_app_firebase/features/cart/presentation/view/cart_screen.dart';
 import 'package:ecommerce_admin_app_firebase/features/home_screen.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/view/profile_screen.dart';
-import 'package:ecommerce_admin_app_firebase/features/search_screen.dart';
+import 'package:ecommerce_admin_app_firebase/features/search/presentation/view/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,10 +15,16 @@ class ThemeProvider with ChangeNotifier {
     const CartScreen(),
     const ProfileScreen()
   ];
+  TextEditingController searchTextController = TextEditingController();
   void initState() {
     controller = PageController(
       initialPage: currentScreen,
     );
+  }
+
+  textFieldonTap(context) {
+    searchTextController.clear();
+    FocusScope.of(context).unfocus();
   }
 
   onDestinationSelected(int index) {
