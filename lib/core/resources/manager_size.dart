@@ -204,7 +204,9 @@ class ManagerHeight {
 
   static double h7 = SizeUtil.setHeight(7.0);
 
-  static var h3 = SizeUtil.setHeight(3.0);
+  static double h3 = SizeUtil.setHeight(3.0);
+
+  static double h15 = SizeUtil.setHeight(15.0);
 }
 
 /*
