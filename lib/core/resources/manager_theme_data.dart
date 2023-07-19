@@ -1,4 +1,6 @@
+import 'package:ecommerce_admin_app_firebase/config/constant.dart';
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_color.dart';
+import 'package:ecommerce_admin_app_firebase/core/resources/manager_size.dart';
 import 'package:flutter/material.dart';
 
 class Styles {
@@ -11,17 +13,53 @@ class Styles {
           ? ManagerColors.darkScaffoldColor
           : ManagerColors.lightScaffoldColor,
       cardColor: isDarkTheme
-          ? const Color.fromARGB(255, 13, 6, 37)
+          ? ManagerColors.darkCardColor
           : ManagerColors.lightCardColor,
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
       appBarTheme: AppBarTheme(
         backgroundColor: isDarkTheme
             ? ManagerColors.darkScaffoldColor
             : ManagerColors.lightScaffoldColor,
-        elevation: 0,
+        elevation: Constant.elevationAppbar,
         centerTitle: false,
         titleTextStyle: TextStyle(
-          color: isDarkTheme ? Colors.white : Colors.black,
+          color:
+              isDarkTheme ? ManagerColors.whiteColor : ManagerColors.blackColor,
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        contentPadding: EdgeInsets.symmetric(
+            vertical: ManagerHeight.h10, horizontal: ManagerWidth.w10),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: ManagerWidth.w1,
+            color: ManagerColors.transparent,
+          ),
+          borderRadius: BorderRadius.circular(ManagerRadius.r8),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: ManagerWidth.w1,
+            color: isDarkTheme
+                ? ManagerColors.whiteColor
+                : ManagerColors.blackColor,
+          ),
+          borderRadius: BorderRadius.circular(ManagerRadius.r8),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: ManagerWidth.w1,
+            color: Theme.of(context).colorScheme.error,
+          ),
+          borderRadius: BorderRadius.circular(ManagerRadius.r8),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            width: ManagerWidth.w1,
+            color: Theme.of(context).colorScheme.error,
+          ),
+          borderRadius: BorderRadius.circular(ManagerRadius.r8),
         ),
       ),
     );
