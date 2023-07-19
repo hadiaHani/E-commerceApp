@@ -16,6 +16,12 @@ class Constant {
   static const double d_35 = 0.35;
   static const int cartBottomCheckoutHeight = 10;
   static const int titleMaxLines = 2;
+  static const double d_22 = 0.22;
+
+  static const int titleFlexible = 5;
+
+  static const int priceFlexible = 3;
+  static const int gridViewCrossAxisCount = 2;
 
   static const String homeScreen = 'Home';
   static const String searchScreen = 'Search';
