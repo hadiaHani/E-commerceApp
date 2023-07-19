@@ -10,6 +10,9 @@ class ManagerColors {
   static const Color redColor = Colors.red;
 
   static const Color blueColor = Colors.blue;
+  static const Color whiteColor = Colors.white;
+  static const Color blackColor = Colors.black;
+  static const Color lightBlueColor = Colors.lightBlue;
 
   static const Color greyColor = Colors.grey;
   static const Color purpleColor = Colors.purple;
