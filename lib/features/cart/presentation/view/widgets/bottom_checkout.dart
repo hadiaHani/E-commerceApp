@@ -3,13 +3,19 @@ import 'package:ecommerce_admin_app_firebase/core/resources/manager_size.dart';
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_strings.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/subtitle_text.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/title_text.dart';
+import 'package:ecommerce_admin_app_firebase/features/cart/presentation/controller/cart_provider.dart';
+import 'package:ecommerce_admin_app_firebase/features/search/presentation/controller/product_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CartBottomCheckout extends StatelessWidget {
   const CartBottomCheckout({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context);
+    final productProvider = Provider.of<ProductProvider>(context);
+
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -29,13 +35,14 @@ class CartBottomCheckout extends StatelessWidget {
               Flexible(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     FittedBox(
-                      child:
-                          TitlesTextWidget(label: "Total (6 products/6 Items)"),
-                    ),
+                        child: TitlesTextWidget(
+                            label:
+                                "Total (${cartProvider.getCartItems.length} products/${cartProvider.getQty()} Items)")),
                     SubtitleTextWidget(
-                      label: "16.99\$",
+                      label:
+                          "${cartProvider.getTotal(productProvider: productProvider)}\$",
                       color: ManagerColors.blueColor,
                     ),
                   ],
