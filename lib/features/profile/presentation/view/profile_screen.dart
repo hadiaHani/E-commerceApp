@@ -8,6 +8,7 @@ import 'package:ecommerce_admin_app_firebase/features/profile/presentation/view/
 import 'package:ecommerce_admin_app_firebase/core/widgets/subtitle_text.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/title_text.dart';
 import 'package:ecommerce_admin_app_firebase/providers/theme_provider.dart';
+import 'package:ecommerce_admin_app_firebase/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -67,9 +68,9 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     width: ManagerWidth.w7,
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       TitlesTextWidget(
                         label: "Hadia Hani",
                         color: ManagerColors.transparent,
@@ -94,17 +95,23 @@ class ProfileScreen extends StatelessWidget {
                   CustomListTile(
                     imagePath: ManagerAssets.orderSvg,
                     text: ManagerStrings.allOrders,
-                    function: () {},
+                    function: () {
+                      Navigator.pushNamed(context, Routes.orderScreen);
+                    },
                   ),
                   CustomListTile(
                     imagePath: ManagerAssets.wishlistSvg,
                     text: ManagerStrings.wishlist,
-                    function: () {},
+                    function: () {
+                      Navigator.pushNamed(context, Routes.wishlistScreen);
+                    },
                   ),
                   CustomListTile(
                     imagePath: ManagerAssets.recent,
                     text: ManagerStrings.viewedRecently,
-                    function: () {},
+                    function: () {
+                      Navigator.pushNamed(context, Routes.viewedRecentlyScreen);
+                    },
                   ),
                   CustomListTile(
                     imagePath: ManagerAssets.address,
@@ -152,10 +159,18 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () async {
+                  Navigator.pushNamed(context, Routes.loginScreen);
+
+                  /*    showErrorORWarningDialog(
+                      context: context,
+                      subtitle: ManagerStrings.sure,
+                      fct: () {},
+                      isError: false);*/
+                },
                 icon: const Icon(Icons.login),
                 label: const Text(
-                  ManagerStrings.login,
+                  ManagerStrings.logout,
                 ),
               ),
             ),
