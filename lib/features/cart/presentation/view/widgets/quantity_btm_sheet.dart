@@ -1,15 +1,19 @@
-import 'dart:developer';
-
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_color.dart';
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_size.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/subtitle_text.dart';
+import 'package:ecommerce_admin_app_firebase/features/cart/presentation/controller/cart_provider.dart';
+import 'package:ecommerce_admin_app_firebase/features/home/domain/model/cart_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class QuantityBottomSheetWidget extends StatelessWidget {
-  const QuantityBottomSheetWidget({super.key});
+  const QuantityBottomSheetWidget({super.key, required this.cartModel});
+  final CartModel cartModel;
 
   @override
   Widget build(BuildContext context) {
+    final cartProvider = Provider.of<CartProvider>(context);
+
     return Padding(
       padding: EdgeInsets.symmetric(
           vertical: ManagerHeight.h8, horizontal: ManagerWidth.w8),
@@ -37,7 +41,12 @@ class QuantityBottomSheetWidget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return InkWell(
                   onTap: () {
-                    log("index  $index");
+                    cartProvider.updateQuantity(
+                      productId: cartModel.productId,
+                      quantity: index + 1,
+                    );
+
+                    Navigator.pop(context);
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(
