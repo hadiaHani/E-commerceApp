@@ -1,4 +1,6 @@
 import 'package:ecommerce_admin_app_firebase/config/constant.dart';
+import 'package:ecommerce_admin_app_firebase/core/resources/manager_color.dart';
+import 'package:ecommerce_admin_app_firebase/features/cart/presentation/controller/cart_provider.dart';
 import 'package:ecommerce_admin_app_firebase/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -10,6 +12,8 @@ class RootScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    final cartProvider = Provider.of<CartProvider>(context);
+
     return Scaffold(
       body: PageView(
         controller: themeProvider.controller,
@@ -26,23 +30,26 @@ class RootScreen extends StatelessWidget {
 
           themeProvider.controller.jumpToPage(themeProvider.currentScreen);
         },
-        destinations: const [
-          NavigationDestination(
+        destinations: [
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.home),
             icon: Icon(IconlyLight.home),
             label: Constant.homeScreen,
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.search),
             icon: Icon(IconlyLight.search),
             label: Constant.searchScreen,
           ),
           NavigationDestination(
-            selectedIcon: Icon(IconlyBold.bag2),
-            icon: Icon(IconlyLight.bag2),
+            selectedIcon: const Icon(IconlyBold.bag2),
+            icon: Badge(
+                backgroundColor: ManagerColors.blueColor,
+                label: Text(cartProvider.getCartItems.length.toString()),
+                child: const Icon(IconlyLight.bag2)),
             label: Constant.cartScreen,
           ),
-          NavigationDestination(
+          const NavigationDestination(
             selectedIcon: Icon(IconlyBold.profile),
             icon: Icon(IconlyLight.profile),
             label: Constant.profileScreen,
