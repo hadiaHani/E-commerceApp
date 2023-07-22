@@ -269,4 +269,8 @@ class ManagerIconSize {
 
   static double s10 = 10;
   static double s20 = 20;
+
+  static double s18 = 20;
+
+  static double s22 = 22;
 }
