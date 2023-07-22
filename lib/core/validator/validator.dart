@@ -1,51 +1,42 @@
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_strings.dart';
 
 class FailedValidator {
-  String? validateEmail(String? email) {
-    if (email!.isEmpty) {
-      return ManagerStrings.requiredField;
+  static String? displayNamevalidator(String? displayName) {
+    if (displayName == null || displayName.isEmpty) {
+      return ManagerStrings.nameValidator;
     }
-
-    if (!RegExp(r"\S+@\S+\.\S+").hasMatch(email)) {
-      return ManagerStrings.invalidEmail;
-    }
-
-    return null;
-  }
-
-  String? validatePassword(String? password) {
-    if (password!.isEmpty) {
-      return ManagerStrings.invalidEmptyPassword;
-    }
-
-    if (password.length < 8) {
-      return ManagerStrings.invalidPassword;
+    if (displayName.length < 3 || displayName.length > 20) {
+      return ManagerStrings.nameLengthValidator;
     }
 
     return null;
   }
 
-  String? validateInput(String? input) {
-    if (input!.isEmpty) {
-      return ManagerStrings.requiredField;
+  static String? emailValidator(String? value) {
+    if (value!.isEmpty) {
+      return ManagerStrings.enterEmail;
     }
-
+    if (!RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+        .hasMatch(value)) {
+      return ManagerStrings.emailValidator;
+    }
     return null;
   }
 
-  String? validateNumber(String? input) {
-    if (input!.isEmpty) {
-      return ManagerStrings.requiredField;
+  static String? passwordValidator(String? value) {
+    if (value!.isEmpty) {
+      return ManagerStrings.enterPassword;
     }
-
+    if (value.length < 6) {
+      return ManagerStrings.passwordLengthValidator;
+    }
     return null;
   }
 
-  String? validatePhone(String? phone) {
-    if (phone!.isEmpty) {
-      return ManagerStrings.requiredPhone;
+  static String? repeatPasswordValidator({String? value, String? password}) {
+    if (value != password) {
+      return ManagerStrings.passwordsMatch;
     }
-
     return null;
   }
 }
