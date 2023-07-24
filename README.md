@@ -1,7 +1,7 @@
 
 ## E-commerce application to display different types of Categories.
 I dealt with State Management Provider | Clean Architecture | Responsive Design.
-
+# Dark , Light Theme
 
 ![Screenshot (87)](https://github.com/hadiaHani/E-commerceApp_withAnAdminApp/assets/72935798/b4fd92ac-60ee-469b-80f6-6497ab9a0de6)
 
