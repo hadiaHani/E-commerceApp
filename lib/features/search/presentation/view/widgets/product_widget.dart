@@ -6,7 +6,7 @@ import 'package:ecommerce_admin_app_firebase/core/resources/manager_size.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/subtitle_text.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/title_text.dart';
 import 'package:ecommerce_admin_app_firebase/features/cart/presentation/controller/cart_provider.dart';
-import 'package:ecommerce_admin_app_firebase/features/heart_btn.dart';
+import 'package:ecommerce_admin_app_firebase/core/widget/heart_btn.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/controller/viewed_prod_provider.dart';
 import 'package:ecommerce_admin_app_firebase/features/search/presentation/controller/product_provider.dart';
 import 'package:ecommerce_admin_app_firebase/routes/routes.dart';
