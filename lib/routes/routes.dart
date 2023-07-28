@@ -1,16 +1,23 @@
+import 'package:ecommerce_admin_app_firebase/config/dependency_injection.dart';
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_strings.dart';
 import 'package:ecommerce_admin_app_firebase/features/auth/presentation/view/forgot_password.dart';
 import 'package:ecommerce_admin_app_firebase/features/auth/presentation/view/login.dart';
 import 'package:ecommerce_admin_app_firebase/features/auth/presentation/view/register.dart';
-import 'package:ecommerce_admin_app_firebase/features/product_details.dart';
+import 'package:ecommerce_admin_app_firebase/features/dashboard/home/presentation/view/dashboard_screen.dart';
+import 'package:ecommerce_admin_app_firebase/features/dashboard/home/presentation/view/edit_upload_product_form.dart';
+import 'package:ecommerce_admin_app_firebase/features/dashboard/home/presentation/view/search_screen.dart';
+import 'package:ecommerce_admin_app_firebase/features/search/presentation/view/product_details.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/view/orders.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/view/viewed_recently.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/view/wishlist.dart';
-import 'package:ecommerce_admin_app_firebase/features/root_screen.dart';
+import 'package:ecommerce_admin_app_firebase/features/main/presenration/view/root_screen.dart';
 import 'package:ecommerce_admin_app_firebase/features/search/presentation/view/search_screen.dart';
+import 'package:ecommerce_admin_app_firebase/start_view.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
+  static const String startScreen = "/start_view";
+
   static const String productDetailesView = "/product_detailes_view";
   static const String routeView = "/route_view";
   static const String wishlistScreen = "/wishlist_view";
@@ -19,18 +26,27 @@ class Routes {
   static const String registerView = "/register_view";
   static const String orderScreen = "/OrderScreen";
   static const String searchScreen = "/SearchScreen";
-
   static const String forgotPasswordScreen = "/forgot_password_screen";
+  static const String dashBoardView = "/dash_board_view";
+  static const String dashBoardSearchView = "/dash_board_search_view";
+  static const String editOrUploadProductScreen = "/EditOrUploadProductScreen";
 }
 
 class RoutGenerator {
   static Route<dynamic> getRout(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.startScreen:
+        return MaterialPageRoute(
+          builder: (context) => const StartScrren(),
+        );
       case Routes.productDetailesView:
         return MaterialPageRoute(
           builder: (context) => const ProductDetails(),
         );
       case Routes.routeView:
+        initMain();
+        initSearch();
+
         return MaterialPageRoute(
           builder: (context) => const RootScreen(),
         );
@@ -59,8 +75,21 @@ class RoutGenerator {
           builder: (context) => const ForgotPasswordScreen(),
         );
       case Routes.searchScreen:
+        initSearch();
         return MaterialPageRoute(
           builder: (context) => const SearchScreen(),
+        );
+      case Routes.dashBoardView:
+        return MaterialPageRoute(
+          builder: (context) => const DashboardScreen(),
+        );
+      case Routes.dashBoardSearchView:
+        return MaterialPageRoute(
+          builder: (context) => const DashboardSearchScreen(),
+        );
+      case Routes.editOrUploadProductScreen:
+        return MaterialPageRoute(
+          builder: (context) => const EditOrUploadProductScreen(),
         );
       default:
         return unDefindRout();
