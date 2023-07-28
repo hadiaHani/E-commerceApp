@@ -40,6 +40,8 @@ dependencies:
   provider: ^6.0.5
   flutter_screenutil: ^5.7.0
   flutter_iconly: ^1.0.2
+  get_it: ^7.6.0
+  get: ^4.6.5
   google_fonts: ^3.0.1
   shimmer: ^3.0.0
   fancy_shimmer_image: ^2.0.3
@@ -47,6 +49,7 @@ dependencies:
   card_swiper: ^3.0.1
   ionicons: ^0.2.2
   image_picker: ^1.0.1
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:
@@ -76,6 +79,8 @@ flutter:
     - assets/images/bag/
     - assets/images/banners/
     - assets/images/categories/
+    - assets/images/dashboard/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
