@@ -1,16 +1,11 @@
-# ecommerce_admin_app_firebase
 
-A new Flutter project.
+## E-commerce application to display different types of Categories.
+I dealt with State Management Provider | Clean Architecture | Responsive Design.
+# Dark, Light Theme
 
-## Getting Started
+![Screenshot (87)](https://github.com/hadiaHani/E-commerceApp/assets/72935798/fdc10570-8f57-4eba-ab22-f21da991fc96)
 
-This project is a starting point for a Flutter application.
+![Screenshot (86)](https://github.com/hadiaHani/E-commerceApp/assets/72935798/95d4444d-6310-49d3-88db-fbf335b33bf4)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot (88)](https://github.com/hadiaHani/E-commerceApp/assets/72935798/347a03fb-0608-4105-97b6-53bd9f2f7150)
