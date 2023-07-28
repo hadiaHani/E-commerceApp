@@ -6,8 +6,10 @@ import 'package:ecommerce_admin_app_firebase/core/resources/manager_strings.dart
 import 'package:ecommerce_admin_app_firebase/core/widgets/empty_bag.dart';
 import 'package:ecommerce_admin_app_firebase/core/widgets/title_text.dart';
 import 'package:ecommerce_admin_app_firebase/features/profile/presentation/controller/viewed_prod_provider.dart';
+import 'package:ecommerce_admin_app_firebase/features/search/presentation/controller/search_controller.dart';
 import 'package:ecommerce_admin_app_firebase/features/search/presentation/view/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class ViewedRecentlyScreen extends StatelessWidget {
@@ -25,41 +27,45 @@ class ViewedRecentlyScreen extends StatelessWidget {
               buttonText: ManagerStrings.shopNow,
             ),
           )
-        : Scaffold(
-            appBar: AppBar(
-              title: TitlesTextWidget(
-                  label:
-                      "Viewed recently (${viewedProvider.getviewedProdItems.length})"),
-              leading: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(ManagerAssets.shoppingCart),
-              ),
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.delete_forever_rounded,
-                    color: Colors.red,
-                  ),
+        : GetBuilder<SearchGController>(builder: (controller) {
+            return Scaffold(
+              appBar: AppBar(
+                title: TitlesTextWidget(
+                    label:
+                        "Viewed recently (${viewedProvider.getviewedProdItems.length})"),
+                leading: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(ManagerAssets.shoppingCart),
                 ),
-              ],
-            ),
-            body: DynamicHeightGridView(
-              itemCount: viewedProvider.getviewedProdItems.length,
-              builder: ((context, index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                      vertical: ManagerHeight.h8, horizontal: ManagerWidth.w12),
-                  child: productWidget(
-                    context: context,
-                    productId: viewedProvider.getviewedProdItems.values
-                        .toList()[index]
-                        .productId,
+                actions: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.delete_forever_rounded,
+                      color: Colors.red,
+                    ),
                   ),
-                );
-              }),
-              crossAxisCount: Constant.gridViewCrossAxisCount,
-            ),
-          );
+                ],
+              ),
+              body: DynamicHeightGridView(
+                itemCount: viewedProvider.getviewedProdItems.length,
+                builder: ((context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: ManagerHeight.h8,
+                        horizontal: ManagerWidth.w12),
+                    child: productWidget(
+                      controller1: controller,
+                      context: context,
+                      productId: viewedProvider.getviewedProdItems.values
+                          .toList()[index]
+                          .productId,
+                    ),
+                  );
+                }),
+                crossAxisCount: Constant.gridViewCrossAxisCount,
+              ),
+            );
+          });
   }
 }
