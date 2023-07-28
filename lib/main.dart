@@ -1,4 +1,5 @@
 import 'package:ecommerce_admin_app_firebase/config/constant.dart';
+import 'package:ecommerce_admin_app_firebase/config/dependency_injection.dart';
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_theme_data.dart';
 import 'package:ecommerce_admin_app_firebase/features/auth/presentation/controller/forgot_password_provider.dart';
 import 'package:ecommerce_admin_app_firebase/features/auth/presentation/controller/login_provider.dart';
@@ -12,9 +13,14 @@ import 'package:ecommerce_admin_app_firebase/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await initModule();
+
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -63,14 +69,14 @@ class MyApp extends StatelessWidget {
               themeProvider,
               child,
             ) {
-              return MaterialApp(
+              return GetMaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Shop Smart AR',
                 theme: Styles.themeData(
                     isDarkTheme: themeProvider.getIsDarkTheme,
                     context: context),
                 onGenerateRoute: RoutGenerator.getRout,
-                initialRoute: Routes.routeView,
+                initialRoute: Routes.startScreen,
               );
             },
           ),
