@@ -1,6 +1,13 @@
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_strings.dart';
 
 class FailedValidator {
+  static String? uploadProdTexts({String? value, String? toBeReturnedString}) {
+    if (value!.isEmpty) {
+      return toBeReturnedString;
+    }
+    return null;
+  }
+
   static String? displayNamevalidator(String? displayName) {
     if (displayName == null || displayName.isEmpty) {
       return ManagerStrings.nameValidator;
