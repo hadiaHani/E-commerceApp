@@ -1,5 +1,6 @@
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_assets.dart';
 import 'package:ecommerce_admin_app_firebase/features/home/domain/model/categories_model.dart';
+import 'package:flutter/material.dart';
 
 class Constant {
   static const double deviceWidth = 428;
@@ -15,6 +16,8 @@ class Constant {
   static const int shimmerSeconds = 10;
   static const double d_2 = 0.2;
   static const double d_3 = 0.3;
+  static const double d_4 = 0.4;
+
   static const double d_6 = 0.6;
   static const int d_10 = 10;
   static const double d_35 = 0.35;
@@ -38,7 +41,8 @@ class Constant {
   static const int priceFlexible = 3;
   static const int gridViewCrossAxisCount = 2;
   static const int categoryCrossAxisCount = 4;
-
+  static const double childAspectRatio = 1;
+  static const int dashboardItemCount = 3;
   static const String homeScreen = 'Home';
   static const String searchScreen = 'Search';
   static const String cartScreen = 'Cart';
@@ -85,6 +89,33 @@ class Constant {
       name: "Cosmetics",
     ),
   ];
+
+  static List<String> addCategoriesList = [
+    'Phones',
+    'Laptops',
+    'Electronics',
+    'Watches',
+    'Clothes',
+    'Shoes',
+    'Books',
+    'Cosmetics',
+    "Accessories",
+  ];
+
+  static const double d_5 = 0.5;
+  static List<DropdownMenuItem<String>>? get categoriesDropDownList {
+    List<DropdownMenuItem<String>>? menuItems =
+        List<DropdownMenuItem<String>>.generate(
+      addCategoriesList.length,
+      (index) => DropdownMenuItem(
+        value: addCategoriesList[index],
+        child: Text(
+          addCategoriesList[index],
+        ),
+      ),
+    );
+    return menuItems;
+  }
 }
 
 class ConstantsPrefsKeys {

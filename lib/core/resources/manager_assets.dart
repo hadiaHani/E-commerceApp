@@ -4,6 +4,8 @@ class ManagerAssets {
   static String bagImagesPath = "assets/images/bag";
   static String bannersImagesPath = "assets/images/banners";
   static String categoriesImagesPath = "assets/images/categories";
+  static String dashboardImagesPath = "assets/images/dashboard";
+
   static const String productImageUrl =
       'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png';
 // general images
@@ -41,4 +43,7 @@ class ManagerAssets {
   static String cosmetics = "$categoriesImagesPath/cosmetics.png";
   static String shoes = "$categoriesImagesPath/shoes.png";
   static String pc = "$categoriesImagesPath/pc.png";
+
+  static String order = "$dashboardImagesPath/order.png";
+  static String cloud = "$dashboardImagesPath/cloud.png";
 }

@@ -1,13 +1,12 @@
 import 'package:ecommerce_admin_app_firebase/core/resources/manager_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 TextStyle _textStyle(
     {required double fontSize,
     required FontWeight fontWeight,
     required Color color,
     required TextDecoration decoration}) {
-  return GoogleFonts.arapey(
+  return TextStyle(
       fontSize: fontSize,
       fontWeight: fontWeight,
       color: color,

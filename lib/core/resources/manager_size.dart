@@ -114,6 +114,8 @@ class ManagerWidth {
   static double w60 = SizeUtil.setWidth(60.0);
 
   static double w3 = SizeUtil.setWidth(3.0);
+
+  static double w63 = SizeUtil.setWidth(63.0);
 }
 
 class ManagerHeight {

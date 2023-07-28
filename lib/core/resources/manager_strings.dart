@@ -13,7 +13,7 @@ class ManagerStrings {
   static const String lightMode = "Light mode";
   static const String login = "Login ";
   static const String logout = "Logout ";
-
+  static const String selectCategory = "Select Category";
   static const String whoops = "Whoops ";
   static const String checkout = "Checkout ";
 
@@ -27,7 +27,7 @@ class ManagerStrings {
   static const String cartViewText =
       'Looks like you didn\'t add anything yet to your cart \ngo ahead and start shopping now';
   static const String shopNow = "Shop Now";
-
+  static const String pickProductImage = "Pick Product image";
   static const String sure = "Are you sure?";
   static const String nameValidator = 'Display name cannot be empty';
 
@@ -52,6 +52,7 @@ class ManagerStrings {
   static const String guest = "Guest";
   static const String forgetPassword = 'Forgot password';
 
+  static const String removeImage = "Remove image";
   static const String dontHaveAccount = "Don't have an account?";
   static const String signUp = "Sign up";
   static const String signUpGoogle = "Sign in with google";
@@ -62,11 +63,20 @@ class ManagerStrings {
 
   static const String chooseOption = "Choose option";
   static const String camera = "Camera";
-
+  static const String clear = "Clear";
   static const String gallery = "Gallery";
   static const String remove = "Remove";
   static const String pickImage = "Make sure to pick up an image";
 
+  static const String pickAnotherImage = "Pick another image";
+  static const String addProduct = "Add a new product";
+  static const String inspectProduct = "inspect all products";
+  static const String viewOrders = "View Orders";
+
+  static const String dashboardView = "Dashboard Screen";
+  static const String uploadProduct = "Upload Product";
+
+  static const String editProduct = "Edit Product";
   static const String placedOrders = 'Placed orders';
   static const String noOrders = "No orders has been placed yet";
   static const String enterEmailAddress =
@@ -75,8 +85,9 @@ class ManagerStrings {
 
   static const String hintEmail = 'youremail@email.com';
   static const String requestLink = "Request link";
+  static const String uploadNewProduct = "Upload a new product";
   static const String noProduct = "No product found";
-
+  static const String categoryEmpty = "Category is empty";
   static const String confirmDeletion =
       "Are you sure you want to delete the () service?";
   static const String inCart = "In cart";
