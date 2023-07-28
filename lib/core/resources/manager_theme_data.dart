@@ -17,6 +17,14 @@ class Styles {
           : ManagerColors.lightCardColor,
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
       appBarTheme: AppBarTheme(
+        iconTheme: IconThemeData(
+          color:
+              isDarkTheme ? ManagerColors.whiteColor : ManagerColors.blackColor,
+        ),
+        actionsIconTheme: IconThemeData(
+          color:
+              isDarkTheme ? ManagerColors.whiteColor : ManagerColors.blackColor,
+        ),
         backgroundColor: isDarkTheme
             ? ManagerColors.darkScaffoldColor
             : ManagerColors.lightScaffoldColor,
