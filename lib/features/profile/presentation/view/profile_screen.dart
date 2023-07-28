@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                         label: "Hadia Hani",
                         color: ManagerColors.transparent,
                       ),
-                      SubtitleTextWidget(label: "coding.with.hadi@gmail.com"),
+                      SubtitleTextWidget(label: "hadia.hani@gmail.com"),
                     ],
                   ),
                 ],
